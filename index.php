@@ -11,33 +11,32 @@ $conexion = $db->getConexion();
 
 
 
-$id=$_GET['id'];
 $sql="SELECT * FROM USUARIOS WHERE id_user = :id";
 $stm=$conexion->prepare($sql);
 $stm->bindParam(":id",$id);
 $stm -> execute();
 $USUARIOS = $stm->fetch();
 
-$id=$_GET['id'];
-$sql="SELECT * FROM generos WHERE id_genero = :id";
-$stm=$conexion->prepare($sql);
-$stm->bindParam(":id",$id);
-$stm -> execute();
-$generos = $stm->fetch();
-
-$id=$_GET['id'];
-$sql="SELECT * FROM CIUDADES WHERE id_ciudad = :id";
-$stm=$conexion->prepare($sql);
-$stm->bindParam(":id",$id);
-$stm -> execute();
-$CIUDADES = $stm->fetch();
-
-$id=$_GET['id'];
-$sql="SELECT * FROM LENGUAJES WHERE id_leng = :id";
-$stm=$conexion->prepare($sql);
-$stm->bindParam(":id",$id);
-$stm -> execute();
-$LENGUAJES= $stm->fetch();
+$sql="SELECT * FROM USUARIOS";
+$bandera=$conexion->prepare($sql);
+$bandera->execute();
+$USUARIOS=$bandera->fetchAll();
+$sql2 = "SELECT * FROM ciudades"; // consulta para las ciudades
+$sql_generos = "SELECT * FROM generos";
+$sql_lenguajes = "SELECT * FROM LENGUAJES"; // consulta para los generos
+// preparar los datos para las ciudades
+// $sql="SELECT *FROM "
+// preparar los datos para los generos
+$bandera_generos = $conexion->prepare($sql_generos);
+$bandera_generos->execute();
+$generos = $bandera_generos->fetchAll();
+// preparar para lenguajes
+$bandera_lenguajes = $conexion -> prepare($sql_lenguajes);
+$bandera_lenguajes -> execute();
+$LENGUAJES = $bandera_lenguajes ->fetchAll();
+$bandera_lenguajes = $conexion -> prepare($sql2);
+$bandera_lenguajes -> execute();
+$CIUDADES = $bandera_lenguajes ->fetchAll();
 
 
 ?>
@@ -113,4 +112,3 @@ $LENGUAJES= $stm->fetch();
                 
     </fieldset>
 </form>
-

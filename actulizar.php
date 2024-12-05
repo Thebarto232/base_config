@@ -33,4 +33,4 @@ $stm->bindParam(":fecha_nacimiento",$fecha_nacimiento);
 
 $stm->bindParam(":id_user",$id);
 
-$stm->execute();
+// $stm->execute();

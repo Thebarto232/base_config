@@ -11,6 +11,26 @@ $stm -> execute();
 $USUARIOS = $stm->fetch();
 
 
+
+
+
+$sql2 = "SELECT * FROM ciudades"; // consulta para las ciudades
+$sql_generos = "SELECT * FROM generos";
+$sql_lenguajes = "SELECT * FROM LENGUAJES"; // consulta para los generos
+// preparar los datos para las ciudades
+// $sql="SELECT *FROM "
+// preparar los datos para los generos
+$bandera_generos = $conexion->prepare($sql_generos);
+$bandera_generos->execute();
+$generos = $bandera_generos->fetchAll();
+// preparar para lenguajes
+$bandera_lenguajes = $conexion -> prepare($sql_lenguajes);
+$bandera_lenguajes -> execute();
+$LENGUAJES = $bandera_lenguajes ->fetchAll();
+$bandera_lenguajes = $conexion -> prepare($sql2);
+$bandera_lenguajes -> execute();
+$CIUDADES = $bandera_lenguajes ->fetchAll();
+
 ?>
 
 <form action="actulizar.php" method="POST">
@@ -83,4 +103,3 @@ $USUARIOS = $stm->fetch();
 
     
 </form>
-
