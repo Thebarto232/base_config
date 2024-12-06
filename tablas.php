@@ -30,7 +30,9 @@ $bandera_lenguajes -> execute();
 $CIUDADES = $bandera_lenguajes ->fetchAll();
 ?>
 
-<table  border ="2">
+
+<link rel="stylesheet" href="styles.css">
+<table class="fondo__tabla" border ="2">
       <tr>
         <td>nombre</td>
         <td>apellido</td>
@@ -61,25 +63,14 @@ $CIUDADES = $bandera_lenguajes ->fetchAll();
               ?>
             </td>
              <td>
-             <a href="editar.php?id=<?=$value['id_user']?>">editar</a>
+             <a class="title" href="editar.php?id=<?=$value['id_user']?>">editar</a>
 
              </td>
              <td>
-             <a href="eliminar.php?id=<?=$value['id_user']?>">eliminar</a>   
+             <a class="title" href="eliminar.php?id=<?=$value['id_user']?>">eliminar</a>   
              </td>
           <br>
-          <div class="ciudades">
-            <label for="id_ciudad">ciudades</label>
-            <select name="id_ciudad" id="id_ciudad">
-            <?php
-              foreach ($CIUDADES as $key => $values) {
-                $values['id_ciudad'];
-              }
-              ?>              
-           </select>
-          </div>
-          <br>
-          <button type="submit">actulizar datos</button>
+     
         
         </tr>
         <?php

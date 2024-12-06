@@ -1,7 +1,8 @@
+
 <?php
 
 
-require('conexion.php');
+require('conexion.php');        
 
 $db = "";
 $conexion = "";
@@ -40,28 +41,31 @@ $CIUDADES = $bandera_lenguajes ->fetchAll();
 
 
 ?>
-<form action="controladores.php" method="post">
-    <fieldset>
-        <legend>Conexion PHP a MySQL</legend>
+
+<link rel="stylesheet" href="styles.css">
+<div class="lista">
+<form action="tablas.php" method="post">
+    <fieldset class="fondo" >
+        <legend class="title_card">Conexion PHP a MySQL</legend>
         <div>
-            <label for="nombre">Nombres</label>
-            <input type="text" id="nombre" name="nombre" placeholder="Nombre" required>
+            <label class="fondos"  for="nombre">Nombres</label>
+            <input class="fondo__imput" type="text" id="nombre" name="nombre" placeholder="Nombre" required>
         </div>
         <div>
-            <label for="apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" placeholder="Apellido" required>
+            <label class="fondos" for="apellido">Apellido</label>
+            <input class="fondo__imput" type="text" id="apellido" name="apellido" placeholder="Apellido" required>
         </div>
         <div>
-            <label for="correo">Correo</label>
-            <input type="text" id="correo" name="correo" placeholder="Correo" required>
+            <label class="fondos" for="correo">Correo</label>
+            <input  class="fondo__imput"type="text" id="correo" name="correo" placeholder="Correo" required>
         </div>
         <div>
-            <label for="fecha_nacimiento">Fecha Nacimiento</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha" required>
+            <label  class="fondos"for="fecha_nacimiento">Fecha Nacimiento</label>
+            <input class="fondo__imput" type="date" id="fecha_nacimiento" name="fecha_nacimiento" placeholder="Fecha" required>
         </div>
 
         <div>
-            <label for="id_ciudad">Ciudades</label>
+            <label class="fondos" for="id_ciudad">Ciudades</label>
             <select name="id_ciudad" id="id_ciudad" >
                 <?php
                 
@@ -108,7 +112,8 @@ $CIUDADES = $bandera_lenguajes ->fetchAll();
         </div>
         
             <br>
-        <button type="submit">Guardar Datos</button>
+        <button class="boton"  type="submit">Guardar Datos</button>
                 
     </fieldset>
 </form>
+</div>
