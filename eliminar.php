@@ -17,4 +17,6 @@ $sql="DELETE FROM  USUARIOS WHERE id_user=:id";
 $stm=$conexion->prepare($sql);
 $stm->bindParam(":id",$id);
 $stm -> execute();
-$USUARIOS = $stm->fetch();  
+$USUARIOS = $stm->fetch();
+
+header ("location: tablas.php");

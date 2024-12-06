@@ -69,7 +69,7 @@ $CIUDADES = $bandera_lenguajes ->fetchAll();
              <td>
              <a class="title" href="eliminar.php?id=<?=$value['id_user']?>">eliminar</a>   
              </td>
-          <br>
+          
      
         
         </tr>
